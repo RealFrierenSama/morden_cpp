@@ -1,0 +1,15 @@
+策略模式 (Strategy Pattern) 体现在哪？
+
+你有一个接口 (IProductSpecStrategy)，它定义了一个要做什么操作 (get_spec_string)。
+
+你有多个具体的策略实现 (Xiaomi15Strategy, Xiaomi14Strategy 等)，它们都遵守这个接口，但各自的实现方式不同（返回不同的字符串）。
+
+这允许你的主程序（客户端代码）可以在运行时动态地切换使用哪种策略，而不需要改变自身的代码结构。
+
+工厂模式 (Factory Pattern) 体现在哪？
+
+你有一个工厂类 (StrategyFactory)。
+
+这个工厂的唯一职责就是根据你给它的指令（ProductModel 枚举），帮你创建（new）出你想要的那个具体的策略对象。
+
+它把“如何创建对象”的复杂逻辑（switch...case）封装了起来。主程序main函数根本不需要知道这些对象是怎么被new出来的，它只需要向工厂“下单”就行了。
